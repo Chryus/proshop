@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
 import Rating from './Rating';
@@ -25,6 +26,10 @@ const Product = ({ product }) => {
       </Card.Body>
     </Card>
   );
+};
+
+Product.propTypes = {
+  product: PropTypes.object.isRequired
 };
 
 export default Product;

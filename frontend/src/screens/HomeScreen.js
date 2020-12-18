@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { Row, Col } from 'react-bootstrap';
 import Product from '../components/Product';
@@ -38,6 +39,10 @@ const HomeScreen = () => {
       )}
     </>
   );
+};
+
+HomeScreen.propTypes = {
+  productList: PropTypes.object.isRequired
 };
 
 export default HomeScreen;

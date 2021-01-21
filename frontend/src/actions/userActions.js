@@ -4,6 +4,8 @@ import {
   USER_LOGIN_FAIL
 } from '../constants/userConstants.js';
 
+import axios from 'axios';
+
 export const login = (email, password) => async (dispatch) => {
   try {
     dispatch({

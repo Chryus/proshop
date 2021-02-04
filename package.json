@@ -6,7 +6,7 @@
   "type": "module",
   "transform": {},
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest backend/tests/*/*.test.js",
     "start": "node backend/index",
     "server": "nodemon backend/index",
     "client": "npm start --prefix frontend",

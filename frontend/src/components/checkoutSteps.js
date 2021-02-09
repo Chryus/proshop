@@ -2,9 +2,9 @@ import React from 'react';
 import { Nav } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
-const checkoutSteps = ({ step1, step2, step3, step4 }) => {
+const CheckoutSteps = ({ step1, step2, step3, step4 }) => {
   return (
-    <Nav>
+    <Nav className='mb-5'>
       <Nav.Item>
         {step1 ? (
           <LinkContainer to='/login'>
@@ -48,4 +48,4 @@ const checkoutSteps = ({ step1, step2, step3, step4 }) => {
   );
 };
 
-export default checkoutSteps;
+export default CheckoutSteps;

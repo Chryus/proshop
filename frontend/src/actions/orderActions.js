@@ -77,7 +77,7 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
   }
 };
 
-export const payOrder = (order, paymentResult) => async (
+export const payOrder = (orderId, paymentResult) => async (
   dispatch,
   getState
 ) => {
@@ -97,7 +97,7 @@ export const payOrder = (order, paymentResult) => async (
       }
     };
     const { data } = await axios.put(
-      `/api/orders/${order._id}/pay`,
+      `/api/orders/${orderId}/pay`,
       paymentResult,
       config
     );

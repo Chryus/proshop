@@ -5,10 +5,11 @@ import {
   getProducts,
   getProductById,
   deleteProduct,
-  updateProduct
+  updateProduct,
+  createProduct
 } from '../controllers/productControllers.js';
 
-router.route('/').get(getProducts);
+router.route('/').get(getProducts).post(protect, admin, createProduct);
 router
   .route('/:id')
   .get(getProductById)

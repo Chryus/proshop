@@ -2,11 +2,20 @@ import {
   CART_ADD_ITEM,
   CART_REMOVE_ITEM,
   CART_SAVE_SHIPPING_ADDRESS,
-  CART_SAVE_PAYMENT_METHOD
+  CART_SAVE_PAYMENT_METHOD,
+  CART_RESET
 } from '../constants/cartConstants';
 
 export const cartReducer = (
-  state = { cartItems: [], shippingAddress: {} },
+  state = {
+    cartItems: [],
+    shippingAddress: {},
+    paymentMethod: '',
+    itemsPrice: 0,
+    shippingPrice: 0,
+    taxPrice: 0,
+    totalPrice: 0
+  },
   action
 ) => {
   switch (action.type) {
@@ -41,6 +50,20 @@ export const cartReducer = (
       return {
         ...state,
         paymentMethod: action.payload
+      };
+    case CART_RESET:
+      localStorage.removeItem('cartItems');
+      localStorage.removeItem('paymentMethod');
+      localStorage.removeItem('shippingAddress');
+      return {
+        ...state,
+        cartItems: [],
+        shippingAddress: {},
+        paymentMethod: '',
+        itemsPrice: 0,
+        shippingPrice: 0,
+        taxPrice: 0,
+        totalPrice: 0
       };
     default:
       return state;
